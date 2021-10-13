@@ -10,10 +10,13 @@ namespace Biblioteca_Parcial
     {
         float saldo;
         List<Compra> compras;
+        int distancia;
+
         public Cliente(string nombre, string apellido, int dni, float saldo) : base(nombre, apellido, dni)
         {
             this.saldo = saldo;
             compras = new List<Compra>();
+            this.distancia = CargarDistancia();
         }
 
         public Cliente(string nombre, string apellido, int dni, float saldo, Compra compra) : this(nombre, apellido, dni, saldo)
@@ -81,6 +84,17 @@ namespace Biblioteca_Parcial
         public Compra[] ObtenerCompras()
         {
             return compras.ToArray();
+        }
+
+
+        /// <summary>
+        /// Crea un numero aleatorio para la distancia a la vivienda del cliente
+        /// </summary>
+        /// <returns>int return el numero creado</returns>
+        int CargarDistancia()
+        {
+            Random kms = new Random();
+            return kms.Next();
         }
     }
 }

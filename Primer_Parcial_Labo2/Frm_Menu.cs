@@ -58,38 +58,49 @@ namespace Primer_Parcial_Labo2
 
         private void btnLogear_Click(object sender, EventArgs e)
         {
-            empleado = PetShop.LoguearUsuario(txtUsuario.Text, txtPassword.Text);
-            if (empleado != null)
+            try
             {
-                lbl_Bienvenida.Text = "Bienvenido:\n" + empleado.Nombre + " " + empleado.Apellido;
-                lblUsuarioContra.Text = "Logueado Correctamente";
-                lblUsuarioContra.ForeColor = Color.Green;
-                lblUsuarioContra.Show();
-                if (empleado.GetType() == typeof(Administrador))
+                empleado = PetShop.LoguearUsuario(txtUsuario.Text, txtPassword.Text);
+                if (empleado != null)
                 {
-                    lbl_Nivel.Text = "Nivel de acceso: Administrador";
-                    btnAdministrarVentas.Enabled = true;
-                    btn_Stock.Enabled = true;
-                    btn_Venta.Enabled = true;
-                    btn_Empleados.Enabled = true;
-                }
-                else if (empleado.GetType() == typeof(Vendedor))
-                {
-                    lbl_Nivel.Text = "Nivel de acceso: Vendedor";
-                    btn_Venta.Enabled = true;
-                    btn_Empleados.Enabled = false;
-                    btnAdministrarVentas.Enabled = false;
-                    btn_Stock.Enabled = false;
-                }
+                    lbl_Bienvenida.Text = "Bienvenido:\n" + empleado.Nombre + " " + empleado.Apellido;
+                    lblUsuarioContra.Text = "Logueado Correctamente";
+                    lblUsuarioContra.ForeColor = Color.Green;
+                    lblUsuarioContra.Show();
+                    if (empleado.GetType() == typeof(Administrador))
+                    {
+                        lbl_Nivel.Text = "Nivel de acceso: Administrador";
+                        btnAdministrarVentas.Enabled = true;
+                        btn_Stock.Enabled = true;
+                        btn_Venta.Enabled = true;
+                        btn_Empleados.Enabled = true;
+                    }
+                    else if (empleado.GetType() == typeof(Vendedor))
+                    {
+                        lbl_Nivel.Text = "Nivel de acceso: Vendedor";
+                        btn_Venta.Enabled = true;
+                        btn_Empleados.Enabled = false;
+                        btnAdministrarVentas.Enabled = false;
+                        btn_Stock.Enabled = false;
+                    }
 
 
+                }
+                else
+                {
+                    lblUsuarioContra.Text = "Usuario o contraseña invalidos";
+                    lblUsuarioContra.ForeColor = Color.Red;
+                    lblUsuarioContra.Show();
+                    UsuarioInvalidoException ex = new UsuarioInvalidoException("Usuario o contraseña invalidos");
+                    throw ex;
+                    
+                }
             }
-            else
+            catch (UsuarioInvalidoException ex)
             {
-                lblUsuarioContra.Text = "Usuario o contraseña invalidos";
-                lblUsuarioContra.ForeColor = Color.Red;
-                lblUsuarioContra.Show();
+                MessageBox.Show($"{ex}");
             }
+           
 
         }
 

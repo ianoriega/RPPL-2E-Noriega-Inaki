@@ -10,3 +10,15 @@ C:\Users\Iñaki\Source\Repos\ianoriega\1er-parcial-de-Laboratorio-II---2-do-cuat
 C:\Users\Iñaki\Source\Repos\ianoriega\1er-parcial-de-Laboratorio-II---2-do-cuatrimestre-2021\Biblioteca_Parcial\obj\Debug\net5.0\Biblioteca_Parcial.dll
 C:\Users\Iñaki\Source\Repos\ianoriega\1er-parcial-de-Laboratorio-II---2-do-cuatrimestre-2021\Biblioteca_Parcial\obj\Debug\net5.0\ref\Biblioteca_Parcial.dll
 C:\Users\Iñaki\Source\Repos\ianoriega\1er-parcial-de-Laboratorio-II---2-do-cuatrimestre-2021\Biblioteca_Parcial\obj\Debug\net5.0\Biblioteca_Parcial.pdb
+C:\Users\Iñaki\source\repos\RPPL-2E-Noriega-Inaki\Biblioteca_Parcial\bin\Debug\net5.0\Biblioteca_Parcial.deps.json
+C:\Users\Iñaki\source\repos\RPPL-2E-Noriega-Inaki\Biblioteca_Parcial\bin\Debug\net5.0\Biblioteca_Parcial.dll
+C:\Users\Iñaki\source\repos\RPPL-2E-Noriega-Inaki\Biblioteca_Parcial\bin\Debug\net5.0\ref\Biblioteca_Parcial.dll
+C:\Users\Iñaki\source\repos\RPPL-2E-Noriega-Inaki\Biblioteca_Parcial\bin\Debug\net5.0\Biblioteca_Parcial.pdb
+C:\Users\Iñaki\source\repos\RPPL-2E-Noriega-Inaki\Biblioteca_Parcial\obj\Debug\net5.0\Biblioteca_Parcial.csproj.AssemblyReference.cache
+C:\Users\Iñaki\source\repos\RPPL-2E-Noriega-Inaki\Biblioteca_Parcial\obj\Debug\net5.0\Biblioteca_Parcial.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Iñaki\source\repos\RPPL-2E-Noriega-Inaki\Biblioteca_Parcial\obj\Debug\net5.0\Biblioteca_Parcial.AssemblyInfoInputs.cache
+C:\Users\Iñaki\source\repos\RPPL-2E-Noriega-Inaki\Biblioteca_Parcial\obj\Debug\net5.0\Biblioteca_Parcial.AssemblyInfo.cs
+C:\Users\Iñaki\source\repos\RPPL-2E-Noriega-Inaki\Biblioteca_Parcial\obj\Debug\net5.0\Biblioteca_Parcial.csproj.CoreCompileInputs.cache
+C:\Users\Iñaki\source\repos\RPPL-2E-Noriega-Inaki\Biblioteca_Parcial\obj\Debug\net5.0\Biblioteca_Parcial.dll
+C:\Users\Iñaki\source\repos\RPPL-2E-Noriega-Inaki\Biblioteca_Parcial\obj\Debug\net5.0\ref\Biblioteca_Parcial.dll
+C:\Users\Iñaki\source\repos\RPPL-2E-Noriega-Inaki\Biblioteca_Parcial\obj\Debug\net5.0\Biblioteca_Parcial.pdb

@@ -137,7 +137,14 @@ namespace Biblioteca_Parcial
             return sb.ToString();
         }
 
-        //Crear metodo Calculo de envio
+        public float CalcularEnvio()
+        {
+            float retorno =-1;
+
+
+
+            return retorno;
+        }
 
     }
 }
