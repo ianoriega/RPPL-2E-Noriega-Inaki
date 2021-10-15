@@ -46,6 +46,7 @@ namespace Primer_Parcial_Labo2
                 }
             }
             lblTotalCompra.Text += $"{compra.CalcularTotalCompra()}";
+            lblTransporte.Text += $" {compra.TipoTransporte}   {compra.CostoEnvio}";
         
         }
 
@@ -64,8 +65,9 @@ namespace Primer_Parcial_Labo2
                                                                    lblDetalleCant.Text + lblDetalleTotal.Text);
                 }
             }
+            sb.AppendLine(lblTransporte.Text);
 
-            StreamWriter texto = new StreamWriter($"C:\\Users\\Iñaki\\Desktop\\{compra.NumeroFactura}.txt");
+            StreamWriter texto = new StreamWriter($"C:\\Users\\Iñaki\\Desktop\\$PetShopFacNro_{compra.NumeroFactura}.txt");
             texto.Write(sb.ToString());
             texto.Close();
             MessageBox.Show("Archivo creado");

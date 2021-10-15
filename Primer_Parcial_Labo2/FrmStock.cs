@@ -42,6 +42,7 @@ namespace Primer_Parcial_Labo2
             txtProductoDescripcion.Show();
             txtProductoPrecio.Show();
             txtProductoCantidad.Show();
+            txtProductoPeso.Show();
             lblAccion.Show();
             btnConfirmar.Show();
             flagAlta = true;
@@ -55,6 +56,7 @@ namespace Primer_Parcial_Labo2
             txtProductoCodigo.Show();      
             btnProductoBuscar.Show();
             lblProductoBuscar.Show();
+            
             productos = PetShop.ObtenerArrayDeProductos();
             foreach (var item in productos)
             {
@@ -111,6 +113,7 @@ namespace Primer_Parcial_Labo2
                         txtProductoDescripcion.Show();
                         txtProductoPrecio.Show();
                         txtProductoCantidad.Show();
+                        txtProductoPeso.Show();
                         lblAccion.Show();
                         btnConfirmar.Show();
                     }
@@ -152,6 +155,7 @@ namespace Primer_Parcial_Labo2
                     txtProductoDescripcion.Show();
                     txtProductoPrecio.Show();
                     txtProductoCantidad.Show();
+                    txtProductoPeso.Show();
                     lblAccion.Show();
                     btnConfirmar.Show();
                 }
@@ -181,15 +185,17 @@ namespace Primer_Parcial_Labo2
 
             }
             else if (!String.IsNullOrEmpty(txtProductoMarca.Text)       && txtProductoMarca.Text.All(char.IsLetter)       &&
-                      !String.IsNullOrEmpty(txtProductoDescripcion.Text) && txtProductoDescripcion.Text.All(char.IsLetter) &&
+                      !String.IsNullOrEmpty(txtProductoDescripcion.Text)                                                  &&
                       !String.IsNullOrEmpty(txtProductoCantidad.Text)    && txtProductoCantidad.Text.All(char.IsDigit)     &&
-                      !String.IsNullOrEmpty(txtProductoPrecio.Text)      && txtProductoPrecio.Text.All(char.IsDigit)         )
+                      !String.IsNullOrEmpty(txtProductoPrecio.Text)      && txtProductoPrecio.Text.All(char.IsDigit)       &&
+                      !String.IsNullOrEmpty(txtProductoPeso.Text)       && txtProductoPeso.Text.All(char.IsDigit)    )
             {
 
                 if(flagAlta)
                 {
-                    producto = new Producto(true, txtProductoMarca.Text,       float.Parse(txtProductoPrecio.Text),
-                                            txtProductoDescripcion.Text, int.Parse(txtProductoCantidad.Text) );
+                    producto = new Producto(true, txtProductoMarca.Text, float.Parse(txtProductoPrecio.Text),
+                                            txtProductoDescripcion.Text, int.Parse(txtProductoCantidad.Text),
+                                                                           float.Parse(txtProductoPeso.Text));
                     PetShop.AgrearProducto(producto);
                     lblAccion.ForeColor = Color.Green;
                     lblAccion.Text = "Producto Creado";
@@ -200,6 +206,7 @@ namespace Primer_Parcial_Labo2
                     producto.Descripcion = txtProductoDescripcion.Text;
                     producto.Precio = int.Parse(txtProductoPrecio.Text);
                     producto.Cantidad = int.Parse(txtProductoCantidad.Text);
+                    producto.Peso = float.Parse(txtProductoPeso.Text);
                     lblAccion.ForeColor = Color.Green;
                     lblAccion.Text = "Producto Modificado";
                     lblProductoInfo.Text = producto.ProductoToString();

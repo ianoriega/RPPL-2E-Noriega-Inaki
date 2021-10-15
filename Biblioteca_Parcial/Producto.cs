@@ -14,6 +14,7 @@ namespace Biblioteca_Parcial
         int codigo;
         int cantidad;
         float subtotal;
+        float peso;
 
 
         public Producto()
@@ -21,25 +22,26 @@ namespace Biblioteca_Parcial
 
         }
 
-        public Producto(bool aux, string marca, float precio, string descripcion) : this()
+        public Producto(bool aux, string marca, float precio, string descripcion, float peso) : this()
         {
             this.marca = marca;
             this.precio = precio;
             this.descripcion = descripcion;
+            this.peso = peso;
             if (aux)
             {
                 this.codigo = PetShop.GenerarCodigoProducto();
             }
         }
 
-        public Producto(bool aux, string marca, float precio, string descripcion, int cantidad) : this(aux, marca,  precio,  descripcion)
+        public Producto(bool aux, string marca, float precio, string descripcion, int cantidad, float peso) : this(aux, marca,  precio,  descripcion, peso)
         {
             this.cantidad = cantidad;
             this.subtotal = precio * cantidad;
         }
 
         //Solo para harcodear
-        public Producto(int codigo, string marca, float precio, string descripcion, int cantidad)
+        public Producto(int codigo, string marca, float precio, string descripcion, int cantidad, float peso)
         {
             this.codigo = codigo;
             this.marca = marca;
@@ -47,6 +49,7 @@ namespace Biblioteca_Parcial
             this.precio = precio;
             this.cantidad = cantidad;
             this.subtotal = precio * cantidad;
+            this.peso = peso;
         }
 
 
@@ -86,6 +89,12 @@ namespace Biblioteca_Parcial
             get { return subtotal; }
             set { subtotal = value; }
         }
+
+        public float Peso
+        {
+            get { return peso; }
+            set { peso = value; }
+        }
         #endregion
 
         /// <summary>
@@ -94,7 +103,7 @@ namespace Biblioteca_Parcial
         /// <returns>cadena con los campos</returns>
         public string ProductoToString()
         {
-            return $"Codigo: {this.Codigo}\nMarca: {this.Marca}\nDescripcion:\n{this.Descripcion}\nPrecio: ${this.Precio}\nStock: {this.cantidad}.";
+            return $"Codigo: {this.Codigo}\nMarca: {this.Marca}\nDescripcion:\n{this.Descripcion}\nPrecio: ${this.Precio}\nStock: {this.cantidad}   Peso:{this.Peso}.";
         }
 
 

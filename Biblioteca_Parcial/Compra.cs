@@ -12,6 +12,15 @@ namespace Biblioteca_Parcial
         int nroCliente;
         int legajoVendedor; 
         List<Producto> productosComprados;
+        Transporte tipoTransporte;
+        float costoEnvio;
+        
+
+        public enum Transporte
+        {
+            Moto = 20, 
+            Miniflete = 50
+        }
         
 
 
@@ -51,6 +60,17 @@ namespace Biblioteca_Parcial
         {
             get { return productosComprados; }
         }
+
+        public Transporte TipoTransporte
+        {
+            get { return tipoTransporte; }
+        }
+
+        public float CostoEnvio
+        {
+            get { return costoEnvio; }
+        }
+       
         #endregion
 
 
@@ -71,7 +91,7 @@ namespace Biblioteca_Parcial
                 if (PetShop.ComprobarStock(codigo,cantidad))
                 {
                     auxProducto = PetShop.ObtenerProducto(codigo);
-                    producto = new Producto(false, auxProducto.Marca, auxProducto.Precio, auxProducto.Descripcion, cantidad);
+                    producto = new Producto(false, auxProducto.Marca, auxProducto.Precio, auxProducto.Descripcion, cantidad, auxProducto.Peso);
                     productosComprados.Add(producto);
                     auxProducto.Cantidad -= cantidad;
                     producto.Codigo = auxProducto.Codigo;
@@ -93,8 +113,8 @@ namespace Biblioteca_Parcial
             {
                 acumulador += (item.Precio * item.Cantidad);
             }
-
-            return  acumulador;
+       
+            return  acumulador + CalcularEnvio(PetShop.ValidarCliente(nroCliente).Distancia);
         }
 
 
@@ -133,17 +153,35 @@ namespace Biblioteca_Parcial
                 sb.AppendLine(item.ProductoToString());
             }
             sb.AppendLine($"Total compra: {this.CalcularTotalCompra()}");
+            sb.AppendLine($"Kilometros envio: {PetShop.ValidarCliente(nroCliente).Distancia}");
+            sb.AppendLine($"Tipo transporte: {this.tipoTransporte}");
+            
 
             return sb.ToString();
         }
 
-        public float CalcularEnvio()
+
+        /// <summary>
+        /// Permite calcular el costo del envio en base a los km recibidos y el tipo de transporte
+        /// segun las caracteristicas de la compra.
+        /// </summary>
+        /// <param name="kilometros">recibe los kilometros de la compra</param>
+        /// <returns>retorna el costo total de la compra</returns>
+        public float CalcularEnvio(int kilometros)
         {
-            float retorno =-1;
+            float pesoCompra=0;
+            
+            foreach (var item in productosComprados)
+            {
+                pesoCompra += item.Peso;
+            }
 
+            if (pesoCompra>15 || productosComprados.Count>5)
+                tipoTransporte = Transporte.Miniflete;
+            else
+                tipoTransporte = Transporte.Moto;
 
-
-            return retorno;
+            return (costoEnvio =  kilometros * (int)tipoTransporte);
         }
 
     }

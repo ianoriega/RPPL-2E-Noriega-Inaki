@@ -50,6 +50,7 @@ namespace Primer_Parcial_Labo2
             this.lblBienvenida = new System.Windows.Forms.Label();
             this.lblSeleccione = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.txtProductoPeso = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,7 +195,7 @@ namespace Primer_Parcial_Labo2
             // 
             this.txtProductoCantidad.Location = new System.Drawing.Point(11, 447);
             this.txtProductoCantidad.Name = "txtProductoCantidad";
-            this.txtProductoCantidad.Size = new System.Drawing.Size(249, 23);
+            this.txtProductoCantidad.Size = new System.Drawing.Size(120, 23);
             this.txtProductoCantidad.TabIndex = 22;
             this.txtProductoCantidad.Text = "Canidad";
             this.txtProductoCantidad.Visible = false;
@@ -248,12 +249,22 @@ namespace Primer_Parcial_Labo2
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // txtProductoPeso
+            // 
+            this.txtProductoPeso.Location = new System.Drawing.Point(141, 447);
+            this.txtProductoPeso.Name = "txtProductoPeso";
+            this.txtProductoPeso.Size = new System.Drawing.Size(120, 23);
+            this.txtProductoPeso.TabIndex = 28;
+            this.txtProductoPeso.Text = "Peso";
+            this.txtProductoPeso.Visible = false;
+            // 
             // FrmStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(284, 561);
+            this.Controls.Add(this.txtProductoPeso);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblSeleccione);
             this.Controls.Add(this.lblBienvenida);
@@ -307,5 +318,6 @@ namespace Primer_Parcial_Labo2
         private System.Windows.Forms.Label lblBienvenida;
         private System.Windows.Forms.Label lblSeleccione;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.TextBox txtProductoPeso;
     }
 }

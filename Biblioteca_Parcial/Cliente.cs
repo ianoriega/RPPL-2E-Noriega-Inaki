@@ -30,6 +30,11 @@ namespace Biblioteca_Parcial
             set { this.saldo = value; }
         }
 
+        public int Distancia
+        {
+            get { return distancia; }
+        }
+
         /// <summary>
         /// Recibe el objeto Compra y lo agrega en la lista de compras del cliente
         /// </summary>
@@ -37,6 +42,7 @@ namespace Biblioteca_Parcial
         public void AgregarCompra(Compra compra)
         {
             compras.Add(compra);
+
         }
 
         /// <summary>
@@ -90,11 +96,13 @@ namespace Biblioteca_Parcial
         /// <summary>
         /// Crea un numero aleatorio para la distancia a la vivienda del cliente
         /// </summary>
-        /// <returns>int return el numero creado</returns>
+        /// <returns>int return el numero creado menor a 51</returns>
         int CargarDistancia()
         {
             Random kms = new Random();
-            return kms.Next();
+            return kms.Next(51);
         }
+
+        
     }
 }

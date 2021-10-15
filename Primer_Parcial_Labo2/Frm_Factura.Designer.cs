@@ -46,6 +46,7 @@ namespace Primer_Parcial_Labo2
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.lblTransporte = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,12 +200,22 @@ namespace Primer_Parcial_Labo2
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
+            // lblTransporte
+            // 
+            this.lblTransporte.AutoSize = true;
+            this.lblTransporte.Location = new System.Drawing.Point(226, 474);
+            this.lblTransporte.Name = "lblTransporte";
+            this.lblTransporte.Size = new System.Drawing.Size(65, 15);
+            this.lblTransporte.TabIndex = 18;
+            this.lblTransporte.Text = "Transporte:";
+            // 
             // Frm_Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(373, 575);
+            this.Controls.Add(this.lblTransporte);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -250,5 +261,6 @@ namespace Primer_Parcial_Labo2
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Label lblTransporte;
     }
 }
