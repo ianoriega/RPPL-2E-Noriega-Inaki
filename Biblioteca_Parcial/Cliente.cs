@@ -9,19 +9,19 @@ namespace Biblioteca_Parcial
     public class Cliente : Persona
     {
         float saldo;
-        List<Compra> compras;
+        Queue<Compra> compras;
         int distancia;
 
         public Cliente(string nombre, string apellido, int dni, float saldo) : base(nombre, apellido, dni)
         {
             this.saldo = saldo;
-            compras = new List<Compra>();
+            compras = new Queue<Compra>();
             this.distancia = CargarDistancia();
         }
 
         public Cliente(string nombre, string apellido, int dni, float saldo, Compra compra) : this(nombre, apellido, dni, saldo)
         {
-            compras.Add(compra);
+            compras.Enqueue(compra);
         }
 
         public float Saldo
@@ -41,7 +41,7 @@ namespace Biblioteca_Parcial
         /// <param name="compra">recibe un objeto de clase compra</param>
         public void AgregarCompra(Compra compra)
         {
-            compras.Add(compra);
+            compras.Enqueue(compra);
 
         }
 

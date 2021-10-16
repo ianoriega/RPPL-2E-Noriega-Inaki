@@ -11,7 +11,7 @@ namespace Biblioteca_Parcial
         int numeroFactura; 
         int nroCliente;
         int legajoVendedor; 
-        List<Producto> productosComprados;
+        Stack<Producto> productosComprados;
         Transporte tipoTransporte;
         float costoEnvio;
         
@@ -31,12 +31,12 @@ namespace Biblioteca_Parcial
                 this.nroCliente = nroCliente;
             if (PetShop.ValidarEmpleado(legajoVendedor))
                 this.legajoVendedor = legajoVendedor;
-            productosComprados = new List<Producto>();
+            productosComprados = new Stack<Producto>();
         }
 
         public Compra(int nroCliente, int legajoVendedor, Producto producto) : this(nroCliente, legajoVendedor)
         {
-            productosComprados.Add(producto);
+            productosComprados.Push(producto);
             this.nroCliente = nroCliente;
         }
 
@@ -56,7 +56,7 @@ namespace Biblioteca_Parcial
             get { return legajoVendedor; }
         }
 
-        public List<Producto> ProductosComprados
+        public Stack<Producto> ProductosComprados
         {
             get { return productosComprados; }
         }
@@ -92,7 +92,7 @@ namespace Biblioteca_Parcial
                 {
                     auxProducto = PetShop.ObtenerProducto(codigo);
                     producto = new Producto(false, auxProducto.Marca, auxProducto.Precio, auxProducto.Descripcion, cantidad, auxProducto.Peso);
-                    productosComprados.Add(producto);
+                    productosComprados.Push(producto);
                     auxProducto.Cantidad -= cantidad;
                     producto.Codigo = auxProducto.Codigo;
                     retorno = producto;
