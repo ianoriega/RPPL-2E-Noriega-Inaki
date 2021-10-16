@@ -257,36 +257,38 @@ namespace Primer_Parcial_Labo2
         }
         #endregion
 
-        private void rtb_Carrito_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void btn_RealizarCompra_Click(object sender, EventArgs e)
         {
             if(flagAgregar)
             {
                 float auxTotalCompra = compra.CalcularTotalCompra();
-                if (cliente.Saldo >= auxTotalCompra)
+                try
                 {
-                    cliente.Saldo -= auxTotalCompra;
-                    cliente.AgregarCompra(compra);
-                    Frm_Factura FrmFac = new Frm_Factura(cliente,compra);
-                    FrmFac.ShowDialog(this);
-                    lblComprar.ForeColor = Color.Green;
-                    lblComprar.Text = "Compra realizada";
-                    lblComprar.Show();
+                    if (cliente.Saldo >= auxTotalCompra)
+                    {
+                        cliente.Saldo -= auxTotalCompra;
+                        cliente.AgregarCompra(compra);
+                        Frm_Factura FrmFac = new Frm_Factura(cliente, compra);
+                        FrmFac.ShowDialog(this);
+                        lblComprar.ForeColor = Color.Green;
+                        lblComprar.Text = "Compra realizada";
+                        lblComprar.Show();
+                    }
+                    else
+                    {
+                        lblComprar.ForeColor = Color.Red;
+                        lblComprar.Text = "El cliente no tiene saldo suficiente para comprar";
+                        lblComprar.Show();
+                        ClienteSinDineroExcepcion ex = new ClienteSinDineroExcepcion("El cliente no tiene saldo suficiente para comprar");
+                        throw ex;
+                    }
                 }
-                else
+                catch (ClienteSinDineroExcepcion ex)
                 {
-                    lblComprar.ForeColor = Color.Red;
-                    lblComprar.Text = "El cliente no tiene saldo suficiente para comprar";
-                    lblComprar.Show();
+                    MessageBox.Show($"{ex}");
                 }
             }
             else

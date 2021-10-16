@@ -352,7 +352,7 @@ namespace Primer_Parcial_Labo2
             this.dtgvCarrito.RowTemplate.Height = 25;
             this.dtgvCarrito.Size = new System.Drawing.Size(445, 323);
             this.dtgvCarrito.TabIndex = 34;
-            this.dtgvCarrito.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+           
             // 
             // Descripcion
             // 
