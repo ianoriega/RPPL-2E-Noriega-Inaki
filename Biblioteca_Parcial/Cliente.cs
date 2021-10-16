@@ -39,11 +39,18 @@ namespace Biblioteca_Parcial
         /// Recibe el objeto Compra y lo agrega en la lista de compras del cliente
         /// </summary>
         /// <param name="compra">recibe un objeto de clase compra</param>
-        public void AgregarCompra(Compra compra)
+        public bool AgregarCompra(Compra compra)
         {
-            compras.Enqueue(compra);
-
+            return this + compra;
         }
+
+
+        public static bool operator +(Cliente cliente, Compra compra)
+        {
+            cliente.compras.Enqueue(compra);
+            return true;
+        }
+
 
         /// <summary>
         /// implemenacion del metodo abstracto persona to string
