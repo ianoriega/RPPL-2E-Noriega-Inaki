@@ -59,6 +59,17 @@ namespace Primer_Parcial_Labo2
             }
         }
 
+        private void MostrarTxtCliente()
+        {
+            lbl_ClienteNombre.Show();
+            txt_ClienteNombre.Show();
+            lbl_ClienteApellido.Show();
+            txt_ClienteApellido.Show();
+            lbl_ClienteSaldo.Show();
+            txt_ClienteSaldo.Show();
+            btn_CrearCliente.Show();
+        }
+
         #region BtnNumCliente
         private void btn_NumCliente_Click(object sender, EventArgs e)
         {
@@ -66,17 +77,10 @@ namespace Primer_Parcial_Labo2
 
             if(txt_NumCliente.Text.All(char.IsDigit) && !String.IsNullOrEmpty(txt_NumCliente.Text))
             {
-                lbl_ClienteNombre.Show();
-                txt_ClienteNombre.Show();
-                lbl_ClienteApellido.Show();
-                txt_ClienteApellido.Show();
-                lbl_ClienteSaldo.Show();
-                txt_ClienteSaldo.Show();
-                btn_CrearCliente.Show();
-
                 cliente = PetShop.ValidarCliente(int.Parse(txt_NumCliente.Text));
                 if (cliente != null)
                 {
+                    MostrarTxtCliente();
                     lbl_estadoCliente.Text = "Cliente Cargado";
                     lbl_estadoCliente.ForeColor = Color.Green;
                     lbl_estadoCliente.Show();
@@ -100,10 +104,15 @@ namespace Primer_Parcial_Labo2
                     lbl_estadoCliente.Text = "Cliente No Encontrado";
                     lbl_estadoCliente.ForeColor = Color.Red;
                     lbl_estadoCliente.Show();
-                    txt_ClienteNombre.Text = "Cargar Nombre";
-                    txt_ClienteApellido.Text = "Cargar Apellido";
-                    txt_ClienteSaldo.Text = "Cargar Saldo";
-                    btn_CrearCliente.Show();
+                    if (empleado.GetType() == typeof(Administrador))
+                    {
+                        MostrarTxtCliente();
+                        txt_ClienteNombre.Text = "Cargar Nombre";
+                        txt_ClienteApellido.Text = "Cargar Apellido";
+                        txt_ClienteSaldo.Text = "Cargar Saldo";
+                        btn_CrearCliente.Show();
+
+                    }               
                 }
             }
             else
