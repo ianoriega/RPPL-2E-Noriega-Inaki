@@ -12,6 +12,7 @@ namespace Biblioteca_Parcial
         Queue<Compra> compras;
         int distancia;
 
+
         public Cliente(string nombre, string apellido, int dni, float saldo) : base(nombre, apellido, dni)
         {
             this.saldo = saldo;
@@ -21,6 +22,13 @@ namespace Biblioteca_Parcial
 
         public Cliente(string nombre, string apellido, int dni, float saldo, Compra compra) : this(nombre, apellido, dni, saldo)
         {
+            compras.Enqueue(compra);
+        }
+
+        public Cliente(Compra compra)
+        {
+            compras = new Queue<Compra>();
+            this.distancia = CargarDistancia();
             compras.Enqueue(compra);
         }
 
@@ -49,6 +57,16 @@ namespace Biblioteca_Parcial
         {
             cliente.compras.Enqueue(compra);
             return true;
+        }
+
+        public static explicit operator Cliente(Compra compra)
+        {
+            Cliente aux = new Cliente(compra);
+            aux.Nombre = "Juan";
+            aux.Apellido = "Poroto";
+            aux.Dni = 14352465;
+            aux.Saldo = 10000;
+            return aux;
         }
 
 

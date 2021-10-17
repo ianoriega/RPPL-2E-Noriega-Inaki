@@ -30,9 +30,8 @@ namespace Biblioteca_Parcial
             productos.Add(new Producto(true, "Power", 700, "Pipeta anti pulgas", 50, (float)0.1));
             
 
-            clientes.Add(new Cliente("Juan", "Poroto", 14352465, 10000, new Compra(14352465,1,new Producto(1, "PerritosYa", 1500, "Cama perrito grande", 5, 5))));
+            clientes.Add( (Cliente)(new Compra(14352465,1,new Producto(1, "PerritosYa", 1500, "Cama perrito grande", 5, 5))));
 
-            
         }
 
         /// <summary>

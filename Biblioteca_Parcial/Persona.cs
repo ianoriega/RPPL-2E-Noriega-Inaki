@@ -12,6 +12,12 @@ namespace Biblioteca_Parcial
         string apellido;
         int dni;
 
+        public Persona()
+        {
+
+        }
+
+
         public Persona(string nombre, string apellido, int dni)
         {
             this.nombre = nombre;
