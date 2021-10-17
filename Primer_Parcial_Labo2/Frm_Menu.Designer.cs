@@ -45,6 +45,7 @@ namespace Primer_Parcial_Labo2
             this.btnLogear = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnLoguearVendedor = new System.Windows.Forms.Button();
+            this.btnDarkMode = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,35 +86,35 @@ namespace Primer_Parcial_Labo2
             // 
             // btn_Venta
             // 
-            this.btn_Venta.Enabled = false;
             this.btn_Venta.Location = new System.Drawing.Point(40, 279);
             this.btn_Venta.Name = "btn_Venta";
-            this.btn_Venta.Size = new System.Drawing.Size(200, 30);
+            this.btn_Venta.Size = new System.Drawing.Size(200, 23);
             this.btn_Venta.TabIndex = 3;
             this.btn_Venta.Text = "Vender";
             this.btn_Venta.UseVisualStyleBackColor = true;
+            this.btn_Venta.Visible = false;
             this.btn_Venta.Click += new System.EventHandler(this.btn_Venta_Click);
             // 
             // btn_Stock
             // 
-            this.btn_Stock.Enabled = false;
-            this.btn_Stock.Location = new System.Drawing.Point(40, 315);
+            this.btn_Stock.Location = new System.Drawing.Point(40, 308);
             this.btn_Stock.Name = "btn_Stock";
-            this.btn_Stock.Size = new System.Drawing.Size(200, 30);
+            this.btn_Stock.Size = new System.Drawing.Size(200, 23);
             this.btn_Stock.TabIndex = 4;
             this.btn_Stock.Text = "Administrar stock";
             this.btn_Stock.UseVisualStyleBackColor = true;
+            this.btn_Stock.Visible = false;
             this.btn_Stock.Click += new System.EventHandler(this.btn_Stock_Click);
             // 
             // btn_Empleados
             // 
-            this.btn_Empleados.Enabled = false;
-            this.btn_Empleados.Location = new System.Drawing.Point(40, 351);
+            this.btn_Empleados.Location = new System.Drawing.Point(40, 337);
             this.btn_Empleados.Name = "btn_Empleados";
-            this.btn_Empleados.Size = new System.Drawing.Size(200, 30);
+            this.btn_Empleados.Size = new System.Drawing.Size(200, 23);
             this.btn_Empleados.TabIndex = 5;
             this.btn_Empleados.Text = "Administrar empleados";
             this.btn_Empleados.UseVisualStyleBackColor = true;
+            this.btn_Empleados.Visible = false;
             this.btn_Empleados.Click += new System.EventHandler(this.btn_Empleados_Click);
             // 
             // btn_Salir
@@ -139,13 +140,13 @@ namespace Primer_Parcial_Labo2
             // 
             // btnAdministrarVentas
             // 
-            this.btnAdministrarVentas.Enabled = false;
-            this.btnAdministrarVentas.Location = new System.Drawing.Point(40, 387);
+            this.btnAdministrarVentas.Location = new System.Drawing.Point(39, 366);
             this.btnAdministrarVentas.Name = "btnAdministrarVentas";
-            this.btnAdministrarVentas.Size = new System.Drawing.Size(200, 30);
+            this.btnAdministrarVentas.Size = new System.Drawing.Size(200, 23);
             this.btnAdministrarVentas.TabIndex = 8;
             this.btnAdministrarVentas.Text = "Administar Ventas";
             this.btnAdministrarVentas.UseVisualStyleBackColor = true;
+            this.btnAdministrarVentas.Visible = false;
             this.btnAdministrarVentas.Click += new System.EventHandler(this.btnAdministrarVentas_Click);
             // 
             // txtUsuario
@@ -207,6 +208,19 @@ namespace Primer_Parcial_Labo2
             this.btnLoguearVendedor.UseVisualStyleBackColor = true;
             this.btnLoguearVendedor.Click += new System.EventHandler(this.btnLoguearVendedor_Click);
             // 
+            // btnDarkMode
+            // 
+            this.btnDarkMode.BackColor = System.Drawing.SystemColors.InfoText;
+            this.btnDarkMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDarkMode.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDarkMode.Location = new System.Drawing.Point(88, 395);
+            this.btnDarkMode.Name = "btnDarkMode";
+            this.btnDarkMode.Size = new System.Drawing.Size(98, 23);
+            this.btnDarkMode.TabIndex = 15;
+            this.btnDarkMode.Text = "Modo Oscuro";
+            this.btnDarkMode.UseVisualStyleBackColor = false;
+            this.btnDarkMode.Click += new System.EventHandler(this.btnDarkMode_Click);
+            // 
             // Frm_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -214,6 +228,7 @@ namespace Primer_Parcial_Labo2
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(276, 511);
+            this.Controls.Add(this.btnDarkMode);
             this.Controls.Add(this.btnLoguearVendedor);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnLogear);
@@ -257,5 +272,6 @@ namespace Primer_Parcial_Labo2
         private System.Windows.Forms.Button btnLogear;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnLoguearVendedor;
+        private System.Windows.Forms.Button btnDarkMode;
     }
 }

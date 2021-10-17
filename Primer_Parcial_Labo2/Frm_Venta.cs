@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca_Parcial;
+using System.Media;
 
 namespace Primer_Parcial_Labo2
 {
@@ -269,6 +270,8 @@ namespace Primer_Parcial_Labo2
                 {
                     if (cliente.Saldo >= auxTotalCompra)
                     {
+                        SoundPlayer sonido = new SoundPlayer(Properties.Resources.aplausos);
+                        sonido.Play();
                         cliente.Saldo -= auxTotalCompra;
                         cliente.AgregarCompra(compra);
                         Frm_Factura FrmFac = new Frm_Factura(cliente, compra);
@@ -276,6 +279,7 @@ namespace Primer_Parcial_Labo2
                         lblComprar.ForeColor = Color.Green;
                         lblComprar.Text = "Compra realizada";
                         lblComprar.Show();
+                        
                     }
                     else
                     {

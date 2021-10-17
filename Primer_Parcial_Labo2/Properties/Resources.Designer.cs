@@ -61,6 +61,15 @@ namespace Primer_Parcial_Labo2.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream aplausos {
+            get {
+                return ResourceManager.GetStream("aplausos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap mascotas {
@@ -86,6 +95,16 @@ namespace Primer_Parcial_Labo2.Properties {
         internal static System.Drawing.Bitmap mascotitas {
             get {
                 object obj = ResourceManager.GetObject("mascotitas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap monooscuro {
+            get {
+                object obj = ResourceManager.GetObject("monooscuro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

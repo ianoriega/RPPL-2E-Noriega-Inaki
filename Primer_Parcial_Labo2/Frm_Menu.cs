@@ -70,18 +70,18 @@ namespace Primer_Parcial_Labo2
                     if (empleado.GetType() == typeof(Administrador))
                     {
                         lbl_Nivel.Text = "Nivel de acceso: Administrador";
-                        btnAdministrarVentas.Enabled = true;
-                        btn_Stock.Enabled = true;
-                        btn_Venta.Enabled = true;
-                        btn_Empleados.Enabled = true;
+                        btnAdministrarVentas.Show();
+                        btn_Stock.Show();
+                        btn_Venta.Show();
+                        btn_Empleados.Show();
                     }
                     else if (empleado.GetType() == typeof(Vendedor))
                     {
                         lbl_Nivel.Text = "Nivel de acceso: Vendedor";
-                        btn_Venta.Enabled = true;
-                        btn_Empleados.Enabled = false;
-                        btnAdministrarVentas.Enabled = false;
-                        btn_Stock.Enabled = false;
+                        btn_Venta.Show();
+                        btn_Empleados.Hide();
+                        btnAdministrarVentas.Hide();
+                        btn_Stock.Hide();
                     }
 
 
@@ -120,6 +120,63 @@ namespace Primer_Parcial_Labo2
         {
             FrmFacturacion moduloFacturacion = new FrmFacturacion();
             moduloFacturacion.ShowDialog(this);
+        }
+
+
+        bool flagDarkMode = false;
+
+        private void btnDarkMode_Click(object sender, EventArgs e)
+        {
+            if (!flagDarkMode)
+            {
+                flagDarkMode = true;
+                lbl_Bienvenida.ForeColor = Color.White;
+                lbl_Nivel.ForeColor = Color.White;
+                this.BackgroundImage = Properties.Resources.monooscuro;
+                lbl_PetShop.ForeColor = Color.White;
+                lblUsuarioContra.ForeColor = Color.White;
+                btnLogear.ForeColor = Color.White;
+                btnLogear.BackColor = Color.Black;
+                btnAdmin.ForeColor = Color.White;
+                btnAdmin.BackColor = Color.Black;
+                btnLoguearVendedor.ForeColor = Color.White;
+                btnLoguearVendedor.BackColor = Color.Black;
+                btn_Venta.ForeColor = Color.White;
+                btn_Venta.BackColor = Color.Black;
+                btn_Stock.ForeColor = Color.White;
+                btn_Stock.BackColor = Color.Black;
+                btn_Empleados.ForeColor = Color.White;
+                btn_Empleados.BackColor = Color.Black;
+                btnAdministrarVentas.ForeColor = Color.White;
+                btnAdministrarVentas.BackColor = Color.Black;
+                btn_Salir.ForeColor = Color.White;
+                btn_Salir.BackColor = Color.Black;
+            }
+            else if (flagDarkMode)
+            {
+                flagDarkMode = false;
+                lbl_Bienvenida.ForeColor = Color.Black;
+                lbl_Nivel.ForeColor = Color.Black;
+                this.BackgroundImage = Properties.Resources.mascotas;
+                lbl_PetShop.ForeColor = Color.Black;
+                lblUsuarioContra.ForeColor = Color.Black;
+                btnLogear.ForeColor = Color.Black;
+                btnLogear.BackColor = Color.White;
+                btnAdmin.ForeColor = Color.Black;
+                btnAdmin.BackColor = Color.White;
+                btnLoguearVendedor.ForeColor = Color.Black;
+                btnLoguearVendedor.BackColor = Color.White;
+                btn_Venta.ForeColor = Color.Black;
+                btn_Venta.BackColor = Color.White;
+                btn_Stock.ForeColor = Color.Black;
+                btn_Stock.BackColor = Color.White;
+                btn_Empleados.ForeColor = Color.Black;
+                btn_Empleados.BackColor = Color.White;
+                btnAdministrarVentas.ForeColor = Color.Black;
+                btnAdministrarVentas.BackColor = Color.White;
+                btn_Salir.ForeColor = Color.Black;
+                btn_Salir.BackColor = Color.White;
+            }
         }
     }
 }
