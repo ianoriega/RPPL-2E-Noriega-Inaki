@@ -21,6 +21,11 @@ namespace Biblioteca_Parcial
             Moto = 20, 
             Miniflete = 50
         }
+
+        public Compra()
+        {
+
+        }
         
 
 

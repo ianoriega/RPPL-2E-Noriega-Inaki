@@ -282,5 +282,85 @@ namespace Biblioteca_Parcial
             return clientes.ToArray();
         }
 
+
+        /// <summary>
+        /// Permite obtener el cliente con mas compras de la lista de clientes
+        /// </summary>
+        /// <returns>retorna el objeto Cliente con mas compras</returns>
+        public static Cliente ObtenerMejorCliente()
+        {
+            bool flagFirst = true;
+            Cliente auxMejorCliente = new Cliente();
+
+            foreach (var item in clientes)
+            {
+                if (flagFirst)
+                {
+                    auxMejorCliente = item;
+                    flagFirst = false;
+                }
+                else
+                {
+                    if (auxMejorCliente.Compras.Count() < item.Compras.Count())
+                    {
+                        auxMejorCliente = item;
+                    }   
+                }
+            }
+
+            return auxMejorCliente;
+        }
+
+
+        /// <summary>
+        /// Permite obtener un empleado de la lista de empleados a partir de su legajo
+        /// </summary>
+        /// <param name="legajo"></param>
+        /// <returns>el objeto empleado encontrado o null si no encontro empleado con ese legajo</returns>
+        public static Empleado ObtenerEmpleado(int legajo)
+        {
+            Empleado aux = null;
+            foreach (var item in empleados)
+            {
+                if (item.Legajo == legajo)
+                {
+                    aux = item;
+                    break;
+                }
+            }
+
+            return aux;
+        }
+
+
+        /// <summary>
+        /// Permite obtener el empleado con mas ventas de la lista
+        /// </summary>
+        /// <returns>Empleado el objeto encontrado o bien null</returns>
+        public static Empleado ObtenerMejorEmpleado()
+        {
+            bool flagFirst = true;
+            int auxLegajoEmpleado =0;
+            int auxCantidadVentas =0;
+            foreach (var item in empleados)
+            {
+                if (flagFirst)
+                {
+                    auxLegajoEmpleado = item.Legajo;
+                    auxCantidadVentas = item.ContadorVentas;
+                    flagFirst = false;
+                }
+                else
+                {
+                    if (auxCantidadVentas < item.ContadorVentas)
+                    {
+                        auxLegajoEmpleado = item.Legajo;
+                        auxCantidadVentas = item.ContadorVentas;
+                    }
+                }
+            }
+
+            return ObtenerEmpleado(auxLegajoEmpleado);
+        }
     }
 }

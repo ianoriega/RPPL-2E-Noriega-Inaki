@@ -36,5 +36,19 @@ namespace Primer_Parcial_Labo2
             }
             rtbFacturacion.Text = sb.ToString();
         }
+
+        private void btnClienteMejor_Click(object sender, EventArgs e)
+        {
+            Cliente aux = PetShop.ObtenerMejorCliente();
+            lblMejor.Text = aux.PersonaToString();
+            lblMejor.Show();
+        }
+
+        private void btnVendedorMejor_Click(object sender, EventArgs e)
+        {
+            Empleado aux = PetShop.ObtenerMejorEmpleado();
+            lblMejor.Text = aux.PersonaToString();
+            lblMejor.Show();
+        }
     }
 }

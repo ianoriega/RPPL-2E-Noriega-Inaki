@@ -12,6 +12,10 @@ namespace Biblioteca_Parcial
         Queue<Compra> compras;
         int distancia;
 
+        public Cliente()
+        {
+
+        }
 
         public Cliente(string nombre, string apellido, int dni, float saldo) : base(nombre, apellido, dni)
         {
@@ -41,6 +45,11 @@ namespace Biblioteca_Parcial
         public int Distancia
         {
             get { return distancia; }
+        }
+
+        public Queue<Compra> Compras
+        {
+            get { return compras; }
         }
 
         /// <summary>

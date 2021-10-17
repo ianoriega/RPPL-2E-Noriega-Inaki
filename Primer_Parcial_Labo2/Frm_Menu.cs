@@ -20,14 +20,9 @@ namespace Primer_Parcial_Labo2
             InitializeComponent();
         }
 
-        public Frm_Menu(Empleado empleado) :this()
-        {
-            this.empleado = empleado;
-
-        }
         private void Frm_Menu_Load(object sender, EventArgs e)
         {
-           
+            
         }
 
 

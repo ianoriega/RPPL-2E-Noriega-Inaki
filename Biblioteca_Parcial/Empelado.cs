@@ -11,6 +11,12 @@ namespace Biblioteca_Parcial
         int legajo;
         string usuario;
         string password;
+        int contadorVentas = 0;
+
+        public Empleado()
+        {
+
+        }
 
         public Empleado(string nombre, string apellido, int dni, string usuario, string password) : base(nombre, apellido, dni)
         {
@@ -36,6 +42,12 @@ namespace Biblioteca_Parcial
             get { return password; }
             set { password = value; }
         }
+
+        public int ContadorVentas
+        {
+            get { return contadorVentas; }
+        }
+
         #endregion
 
         /// <summary>
@@ -80,6 +92,11 @@ namespace Biblioteca_Parcial
             }
 
             return retorno;
+        }
+
+        public virtual void AumentarContadorVentas()
+        {
+            contadorVentas++;
         }
     }
 }

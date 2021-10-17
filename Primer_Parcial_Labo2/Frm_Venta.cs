@@ -274,6 +274,7 @@ namespace Primer_Parcial_Labo2
                         sonido.Play();
                         cliente.Saldo -= auxTotalCompra;
                         cliente.AgregarCompra(compra);
+                        empleado.AumentarContadorVentas();
                         Frm_Factura FrmFac = new Frm_Factura(cliente, compra);
                         FrmFac.ShowDialog(this);
                         lblComprar.ForeColor = Color.Green;

@@ -33,6 +33,9 @@ namespace Primer_Parcial_Labo2
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_PetShop = new System.Windows.Forms.Label();
             this.rtbFacturacion = new System.Windows.Forms.RichTextBox();
+            this.btnClienteMejor = new System.Windows.Forms.Button();
+            this.btnVendedorMejor = new System.Windows.Forms.Button();
+            this.lblMejor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +70,36 @@ namespace Primer_Parcial_Labo2
             this.rtbFacturacion.TabIndex = 10;
             this.rtbFacturacion.Text = "";
             // 
+            // btnClienteMejor
+            // 
+            this.btnClienteMejor.Location = new System.Drawing.Point(12, 330);
+            this.btnClienteMejor.Name = "btnClienteMejor";
+            this.btnClienteMejor.Size = new System.Drawing.Size(120, 23);
+            this.btnClienteMejor.TabIndex = 11;
+            this.btnClienteMejor.Text = "Mejor cliente";
+            this.btnClienteMejor.UseVisualStyleBackColor = true;
+            this.btnClienteMejor.Click += new System.EventHandler(this.btnClienteMejor_Click);
+            // 
+            // btnVendedorMejor
+            // 
+            this.btnVendedorMejor.Location = new System.Drawing.Point(154, 330);
+            this.btnVendedorMejor.Name = "btnVendedorMejor";
+            this.btnVendedorMejor.Size = new System.Drawing.Size(120, 23);
+            this.btnVendedorMejor.TabIndex = 12;
+            this.btnVendedorMejor.Text = "Mejor vendedor";
+            this.btnVendedorMejor.UseVisualStyleBackColor = true;
+            this.btnVendedorMejor.Click += new System.EventHandler(this.btnVendedorMejor_Click);
+            // 
+            // lblMejor
+            // 
+            this.lblMejor.AutoSize = true;
+            this.lblMejor.Location = new System.Drawing.Point(66, 356);
+            this.lblMejor.Name = "lblMejor";
+            this.lblMejor.Size = new System.Drawing.Size(38, 15);
+            this.lblMejor.TabIndex = 13;
+            this.lblMejor.Text = "Mejor";
+            this.lblMejor.Visible = false;
+            // 
             // FrmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -74,11 +107,15 @@ namespace Primer_Parcial_Labo2
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(284, 461);
+            this.Controls.Add(this.lblMejor);
+            this.Controls.Add(this.btnVendedorMejor);
+            this.Controls.Add(this.btnClienteMejor);
             this.Controls.Add(this.rtbFacturacion);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_PetShop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFacturacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pet Shop - Modulo facturacion";
             this.Load += new System.EventHandler(this.FrmFacturacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -92,5 +129,8 @@ namespace Primer_Parcial_Labo2
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_PetShop;
         private System.Windows.Forms.RichTextBox rtbFacturacion;
+        private System.Windows.Forms.Button btnClienteMejor;
+        private System.Windows.Forms.Button btnVendedorMejor;
+        private System.Windows.Forms.Label lblMejor;
     }
 }
